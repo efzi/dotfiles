@@ -1,2 +1,2 @@
-require("fazi")
-print("hello")
+require('base')
+require('maps')
