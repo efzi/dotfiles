@@ -19,7 +19,7 @@ vim.o.hlsearch = false
 vim.opt.incsearch = true
 
 -- Make line numbers default
-vim.o.nu = true 
+vim.o.nu = true
 vim.o.relativenumber = true
 
 -- Enable mouse mode
@@ -47,7 +47,7 @@ vim.o.breakindent = true
 vim.o.undofile = true
 
 -- No Wrap lines
-vim.opt.wrap = false 
+vim.opt.wrap = false
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -82,9 +82,9 @@ vim.opt.background = 'dark'
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+    group = highlight_group,
+    pattern = '*',
 })
