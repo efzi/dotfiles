@@ -1,15 +1,24 @@
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- lazy package manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+
+require("lazy").setup("fazi.plugins", {})
+
 require("fazi.base")
-require("fazi.maps")
-require("fazi.plugins")
-require("fazi.colors")
-require("fazi.plugins.comment")
-require("fazi.plugins.nvim-tree")
-require("fazi.plugins.telescope")
-require("fazi.plugins.cmp")
-require("fazi.plugins.lsp.mason")
-require("fazi.plugins.lsp.lspsaga")
-require("fazi.plugins.lsp.lspconfig")
-require("fazi.plugins.lsp.null-ls")
-require("fazi.plugins.autopairs")
-require("fazi.plugins.treesitter")
-require("fazi.plugins.gitsigns")
+
+require("fazi.keymaps")
