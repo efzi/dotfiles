@@ -1,4 +1,3 @@
-
 -- Enable numbers
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -10,14 +9,14 @@ vim.opt.expandtab = true -- expand tab to spaces
 vim.opt.autoindent = true -- copy indent from current line when starting new one
 
 -- no wrap
-vim.opt.wrap = false 
+vim.opt.wrap = false
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -39,11 +38,11 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = "menu,menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-vim.opt.background = 'dark'
+vim.opt.background = "dark"
 
 vim.opt.cursorline = true -- highlight the current cursor line
 -- splits
@@ -52,9 +51,9 @@ vim.opt.splitbelow = true -- split horizontal window to the bottom
 
 vim.opt.scrolloff = 8
 -- highlight on yank
-vim.cmd [[
+vim.cmd([[
   augroup highlight_yank
   autocmd!
   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
   augroup END
-]]
+]])
