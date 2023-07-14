@@ -10,7 +10,7 @@ keymap.set("n", "-", "<C-x>")
 keymap.set("n", "dw", 'vb"_d')
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+-- keymap.set("n", "<C-a>", "gg<S-v>G") it messes with tmux
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
@@ -35,3 +35,5 @@ keymap.set({ "v", "n" }, "<leader>w", ":w<CR>")
 
 keymap.set("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
